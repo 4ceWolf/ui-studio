@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>UI Studio</title>
+<link rel="stylesheet" href="css/app.css" />
+</head>
+<body>
+<div id="studio">
+  <header id="topbar">
+    <div class="tb-brand"><span class="tb-mk">◈</span><div><b>UI Studio</b><span>local mockup composer</span></div></div>
+
+    <label class="tb-field"><span>Name</span><input id="uiName" type="text" value="Untitled UI" /></label>
+    <label class="tb-field"><span>Layout</span><select id="uiLayout"></select></label>
+
+    <button id="btnThemes" class="tb-btn">Theme <span class="tb-swatch" id="themeSwatch"></span></button>
+
+    <div class="tb-seg" id="accentMode">
+      <button data-val="dynamic" class="on">Dynamic</button>
+      <button data-val="custom">Custom</button>
+      <button data-val="fixed">Fixed</button>
+    </div>
+
+    <div class="tb-seg" id="device">
+      <button data-val="1280" class="on">Desktop</button>
+      <button data-val="920">Tablet</button>
+      <button data-val="430">Phone</button>
+    </div>
+
+    <div class="tb-zoom">
+      <button id="zoomOut">−</button><span id="zoomVal">100%</span><button id="zoomIn">+</button>
+    </div>
+
+    <div class="tb-layout">
+      <label><input id="laySidebar" type="checkbox" checked /> sidebar</label>
+      <label><input id="layTopbar" type="checkbox" /> topbar</label>
+      <label><input id="layPlayer" type="checkbox" checked /> player</label>
+    </div>
+
+    <div class="tb-actions">
+      <button id="btnProjects" class="tb-btn">Projects</button>
+      <button id="btnUndo" class="tb-btn" title="Undo (Ctrl+Z)">↶</button>
+      <button id="btnRedo" class="tb-btn" title="Redo (Ctrl+Shift+Z)">↷</button>
+      <button id="btnPreview" class="tb-btn">Preview</button>
+      <button id="btnExport" class="tb-btn primary">Export HTML</button>
+      <button id="btnReset" class="tb-btn danger" title="Reset">Reset</button>
+    </div>
+  </header>
+
+  <div id="body">
+    <aside id="palette">
+      <div class="p-search"><input id="paletteSearch" placeholder="Search blocks…" autocomplete="off" /></div>
+      <div id="paletteList"></div>
+    </aside>
+
+    <main id="stage">
+      <div id="deviceWrap"><div id="canvas"></div></div>
+    </main>
+
+    <aside id="inspector"></aside>
+  </div>
+</div>
+
+<div id="modalRoot"></div>
+<input id="fileInput" type="file" accept="application/json,.json" style="display:none" />
+<script src="vendor/Sortable.min.js"></script>
+<script src="js/themes.js"></script>
+<script src="js/core.js"></script>
+<script src="js/component-css.js"></script>
+<script src="js/blocks.js"></script>
+<script src="js/studio.js"></script>
+</body>
+</html>
